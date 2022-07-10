@@ -26,14 +26,14 @@
   "lint-staged": {
     "*.ts": [
       "eslint 'src/**' --fix",
-      "yarn test:staged --passWithNoTests",
+      "yarn test:staged",
       "git add"
     ],
     "*.js": "eslint --cache --fix"
   },
   "scripts": {
     "prepare": "husky install",
-    "test": "jest",
-    "test:staged": "jest"
+    "test": "jest --passWithNoTests --watch",
+    "test:staged": "jest --passWithNoTests"
   }
 }
